@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 		return (0);
 	while (aux1)
 	{
-		if (aux && aux1)
+		if (aux->next && aux1->next->next)
 		{
 			aux = aux->next;
 			aux1 = aux1->next->next;
