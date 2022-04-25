@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 
 	if (!list)
 		return (0);
-	while (aux1)
+	while (1)
 	{
 		if (aux->next && aux1->next->next)
 		{
@@ -23,5 +23,5 @@ int check_cycle(listint_t *list)
 		else
 			return (0);
 	}
-	return (0);
+
 }
