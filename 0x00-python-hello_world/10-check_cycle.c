@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- * check_cycle - main
- * @list: puntero a una lista
- * Return: 0 or 1
+ *check_cycle - check cycle
+ *@list: list
+ *Return: 0 or 1
  **/
 int check_cycle(listint_t *list)
 {
@@ -13,15 +13,14 @@ int check_cycle(listint_t *list)
 		return (0);
 	while (1)
 	{
-		if (aux->next && aux1->next->next)
+		if (aux->next != NULL && aux1->next->next != NULL)
 		{
 			aux = aux->next;
 			aux1 = aux1->next->next;
-			if (aux == aux1)
+			if (aux1 == aux)
 				return (1);
 		}
 		else
 			return (0);
 	}
-
 }
