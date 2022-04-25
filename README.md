@@ -1,1 +1,3 @@
-This repository there are works with python
+#holbertonschool-higher_level_programming
+
+	In this directory I learn the bases of programming in python.
