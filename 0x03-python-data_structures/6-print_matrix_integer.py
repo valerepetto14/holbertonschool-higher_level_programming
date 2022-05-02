@@ -6,7 +6,7 @@ def print_matrix_integer(matrix=[[]]):
         len_pos = len(matrix[i])
         a = 0
         while(a < len_pos):
-            print(f"{matrix[i][a]}", end="")
+            print(f"{matrix[i][a]}", end=" ")
             a += 1
         print("")
         i += 1
