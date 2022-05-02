@@ -4,4 +4,4 @@ def print_list_integer(my_list=[]):
     tipo = type(lista)
     if tipo == type(my_list):
         for i in my_list:
-            print(f"{i}")
+            print(f"{i:d}")
