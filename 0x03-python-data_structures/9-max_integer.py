@@ -5,6 +5,6 @@ def max_integer(my_list=[]):
         for i in range(len(my_list)):
             if(my_list[i] > mayor):
                 mayor = my_list[i]
-            else:
-                continue
         return mayor
+    else:
+        return None
