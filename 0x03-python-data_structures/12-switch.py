@@ -1,4 +1,3 @@
-# Edit this file.
 #!/usr/bin/python3
 def switch():
     a = 89
