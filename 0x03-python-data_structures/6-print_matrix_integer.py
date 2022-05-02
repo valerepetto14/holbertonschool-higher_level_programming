@@ -7,8 +7,6 @@ def print_matrix_integer(matrix=[[]]):
         a = 0
         while(a < len_pos):
             print(f"{matrix[i][a]}", end="")
-            if a < len_pos - 1:
-                print(" ", end="")
             a += 1
-        print("$")
+        print("")
         i += 1
