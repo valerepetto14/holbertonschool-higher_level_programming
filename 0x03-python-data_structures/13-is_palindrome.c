@@ -11,9 +11,7 @@ int is_palindrome(listint_t **head)
 
 	if (head == NULL) /* non-existing list is not */
 		return (0);
-	if (*head == NULL)
-		return (1);
-	if ((*head)->next == NULL) /* one node list returns true */
+	if (!*head || (*head)->next == NULL)
 		return (1);
 	while (aux->next != NULL)
 	{
