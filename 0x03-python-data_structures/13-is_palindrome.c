@@ -9,6 +9,8 @@ int is_palindrome(listint_t **head)
 	int iter = 0, len = 0, ultimo;
 	listint_t *aux = *head, *auxpar = *head, *recorrer = *head;
 
+	if (head == NULL) /* non-existing list is not */
+		return (0);
 	if (*head == NULL)
 		return (1);
 	if ((*head)->next == NULL) /* one node list returns true */
@@ -16,8 +18,7 @@ int is_palindrome(listint_t **head)
 	while (aux->next != NULL)
 	{
 		aux = aux->next;
-		len++;
-	}
+		len++; }
 	len++;
 	ultimo = len;
 	if (len % 2 == 0)
