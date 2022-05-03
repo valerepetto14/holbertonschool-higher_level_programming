@@ -33,7 +33,7 @@ int is_palindrome(listint_t **head)
 		}
 
 	}
-	else if (len % 2 != 0)
+	else
 	{
 		while (iter < (len / 2) - 1)
 		{
