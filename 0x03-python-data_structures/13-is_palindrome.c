@@ -9,9 +9,9 @@ int is_palindrome(listint_t **head)
 	int iter = 0, len = 0, ultimo;
 	listint_t *aux = *head, *auxpar = *head, *recorrer = *head;
 
+	if (head ==  NULL)
+		return (0);
 	if (*head == NULL)
-		return (1);
-	if ((*head)->next == NULL)
 		return (1);
 	while (aux->next != NULL)
 	{
