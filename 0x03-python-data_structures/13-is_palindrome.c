@@ -1,14 +1,13 @@
 #include "lists.h"
 /**
-*is palindrome - verifica si es palindrome
+*is_palindrome - verifica si es palindrome
 *@head: lista
 *Return: int
 **/
 int is_palindrome(listint_t **head)
 {
-	int iterpar = 0, len = 0, ultimo;
-	listint_t *aux = *head, *auxpar = *head;
-	listint_t *recorrer = *head;
+	int iter = 0, len = 0, ultimo;
+	listint_t *aux = *head, *auxpar = *head, *recorrer = *head;
 
 	if (*head == NULL)
 		return (1);
@@ -21,13 +20,13 @@ int is_palindrome(listint_t **head)
 	ultimo = len;
 	if (len % 2 == 0)
 	{
-		while (iterpar < len / 2 && auxpar->next != NULL)
+		while (iter < len / 2)
 		{
 			if (auxpar->n == indice_list(recorrer, ultimo))
 			{
 				ultimo = ultimo - 1;
 				auxpar = auxpar->next;
-				iterpar++;
+				iter++;
 			}
 			else
 				return (0);
@@ -36,9 +35,17 @@ int is_palindrome(listint_t **head)
 	}
 	else if (len % 2 != 0)
 	{
-
-	}
-	return (1);
+		while (iter < (len / 2) - 1)
+		{
+			if (auxpar->n == indice_list(recorrer, ultimo))
+			{
+				ultimo = ultimo - 1;
+				auxpar = auxpar->next;
+				 iter++;
+			}
+			else
+				return (0); }
+	} return (1);
 }
 
 /**
@@ -52,11 +59,11 @@ int indice_list(listint_t *head, int indice)
 	listint_t *aux = head;
 	int iter = 0;
 
+	indice--;
 	while (iter < indice && aux->next != NULL)
 	{
 		aux = aux->next;
 		iter++;
 	}
-	printf("%d\n",aux->n);
 	return (aux->n);
 }
