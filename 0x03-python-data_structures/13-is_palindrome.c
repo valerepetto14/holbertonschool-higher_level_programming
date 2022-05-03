@@ -6,7 +6,7 @@
 */
 int is_palindrome(listint_t **head)
 {
-	int *copy_list = NULL;
+	int copy_list[3000];
 	listint_t *aux = *head, *aux2 = *head;
 	int len = 0;
 	int i = 0;
@@ -19,7 +19,6 @@ int is_palindrome(listint_t **head)
 			aux = aux->next;
 		}
 
-		copy_list = malloc(len * sizeof(int));
 		while (aux2)
 		{
 			copy_list[i] = aux2->n;
@@ -35,6 +34,5 @@ int is_palindrome(listint_t **head)
 			len--;
 		}
 	}
-	free(copy_list);
 	return (1);
 }
