@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     mayor = 0
     key_mayor = ""
-    if a_dictionary is ZZNone:
+    if a_dictionary is None:
         return None
     for i in a_dictionary:
         if a_dictionary[i] > mayor:
