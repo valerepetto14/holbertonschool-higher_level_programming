@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+define class square and constructor with their variables
+"""
+
+
 class Square:
     """class square"""
     def __init__(self, size=0):

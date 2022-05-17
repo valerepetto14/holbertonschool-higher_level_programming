@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+define my_print that print form of this square
+"""
+
+
 class Square:
     '''define class square'''
     def __init__(self, size=0):
