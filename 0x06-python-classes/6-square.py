@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+add clase square and print
+"""
+
+
 class Square:
     '''define class square'''
     def __init__(self, size=0, position=(0, 0)):
@@ -32,14 +37,14 @@ class Square:
         if len(value) != 2 or (value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = value 
- 
+            self.__position = value
+
     def my_print(self):
         '''define method my_print that printed the square with #'''
         if (self.size == 0):
             print("")
         else:
-            for d in range (self.__position[1]):
+            for d in range(self.__position[1]):
                 print("")
             for i in range(self.size):
                 for e in range(self.__position[0]):
