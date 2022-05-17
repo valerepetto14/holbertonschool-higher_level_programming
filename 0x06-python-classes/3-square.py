@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+add class square and method area
+"""
+
+
 class Square:
     """class square"""
     def __init__(self, size=0):
