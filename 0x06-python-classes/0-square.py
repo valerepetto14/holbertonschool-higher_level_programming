@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class square:
-    '''creamos la clase '''
+    """creamos la clase"""
     def __init__(self):
-        '''construcctor de la clase'''
+        """construcctor de la clase"""
         pass

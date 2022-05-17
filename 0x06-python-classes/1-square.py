@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class Square:
-    '''creamos la clase'''
+    """creamos la clase"""
     def __init__(self, size):
-        '''creamos el constructor '''
+        """creamos el constructor"""
         self.__size = size
