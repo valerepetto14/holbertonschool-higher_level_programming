@@ -3,7 +3,6 @@
 define class square and constructor with their variables and methods setter and getter
 """
 
-
 class Square:
     '''define class square'''
     def __init__(self, size=0):
