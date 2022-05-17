@@ -5,6 +5,7 @@ constructor with their variables and methods setter and getter
 """
 
 class Square:
+    """class square"""
     def __init__(self, size=0):
         """define constructor"""
         self.__size = size
