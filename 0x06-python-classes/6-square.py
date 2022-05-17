@@ -8,7 +8,7 @@ class Square:
     '''define class square'''
     def __init__(self, size=0, position=(0, 0)):
         '''define constructor'''
-        self.__size = size
+        self.size = size
         self.__position = position
 
     @property
@@ -43,14 +43,14 @@ class Square:
 
     def my_print(self):
         '''define method my_print that printed the square with #'''
-        if (self.size == 0):
+        if (self.__size == 0):
             print("")
         else:
             if self.__position[1] > 0:
                 for d in range(self.__position[1]):
                     print("")
             for i in range(self.__size):
-                for e in range(self.__position[0]):
+                for e in range(self.position[0]):
                     print(" ", end="")
                 for a in range(self.__size):
                     print("#", end="")
