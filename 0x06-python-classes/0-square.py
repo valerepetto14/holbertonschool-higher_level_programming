@@ -2,9 +2,6 @@
 """
 Class square that defines a square.
 """
-
-
-
-class square:
+class Square:
     """creamos la clase"""
         pass
