@@ -4,6 +4,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         '''define constructor'''
         self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -25,10 +26,10 @@ class Square:
         '''getter of size'''
         return self.__position
 
-   @size.setter
+    @size.setter
     def size(self, value):
         '''setter of size'''
-        if len(value) != 2 || (value[0] < 0 || value[1] < 0):
+        if len(value) != 2 or (value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value 
@@ -38,8 +39,11 @@ class Square:
         if (self.size == 0):
             print("")
         else:
-            for i in range(self.size):
+            for d in range (self.__position[1]):
                 print("")
+            for i in range(self.size):
+                for e in range(self.__position[0]):
+                    print(" ", end="")
                 for a in range(self.size):
                     print("#", end="")
-        print("")
+                print("")
