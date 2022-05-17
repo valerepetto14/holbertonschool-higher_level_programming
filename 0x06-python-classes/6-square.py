@@ -31,7 +31,7 @@ class Square:
         '''getter of size'''
         return self.__position
 
-    @size.setter
+    @position.setter
     def size(self, value):
         '''setter of size'''
         if len(value) != 2 or (value[0] < 0 or value[1] < 0):
@@ -46,9 +46,9 @@ class Square:
         else:
             for d in range(self.__position[1]):
                 print("")
-            for i in range(self.size):
+            for i in range(self.__size):
                 for e in range(self.__position[0]):
                     print(" ", end="")
-                for a in range(self.size):
+                for a in range(self.__size):
                     print("#", end="")
                 print("")
