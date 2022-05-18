@@ -5,8 +5,9 @@ create rectangle
 
 
 class Rectangle:
-    number_of_instances = 0
     "def class rectangle"
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -26,10 +27,12 @@ class Rectangle:
             self.__width = value
 
     @property
+    """getter"""
     def height(self):
         return self.__heigth
 
     @height.setter
+    """setter"""
     def height(self, value):
         if type(value) != int:
             raise TypeError("size must be an integer")
@@ -49,8 +52,8 @@ class Rectangle:
         return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        string = ""
         """Prints in stdout the square with the character #"""
+        string = ""
         if self.__width == 0:
             return string
         else:
