@@ -54,8 +54,8 @@ class Rectangle:
         return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        string = ""
         """Prints in stdout the square with the character #"""
+        string = ""
         if self.__width == 0:
             return string
         else:
