@@ -6,8 +6,8 @@ create rectangle
 
 class Rectangle:
     """def class Rectangle"""
-    print_symbol = "#"
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.height = height
