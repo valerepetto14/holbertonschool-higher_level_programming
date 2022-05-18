@@ -7,18 +7,17 @@ define class rectangle and constructor
 class Rectangle:
     """creamos la clase"""
     def __init__(self, width=0, height=0):
-        """creamos el constructor"""
         self.heigth = heigth
         self.width = width
 
     @property
     def width(self):
-        '''private instance attribute named width'''
+        """getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        '''setter of the private instance width'''
+        """setter"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -28,12 +27,12 @@ class Rectangle:
 
     @property
     def height(self):
-        '''private instance attribute named height'''
+        """getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        '''setter of the private instance height'''
+        """setter"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
