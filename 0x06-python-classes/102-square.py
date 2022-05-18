@@ -52,4 +52,4 @@ class Square:
 
     def __ge__(self, other):
         """override >="""
-        return (self.area() >= other.area())	
+        return (self.area() >= other.area())
