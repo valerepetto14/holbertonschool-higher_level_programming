@@ -27,29 +27,29 @@ class Square:
             self.__size = value
 
     def area(self):
-        """define method that calc the area of square"""
+        "def area"
         return self.size * self.size
 
     def __eq__(self, other):
-        """override =="""
+        """=="""
         return self.area() == other.area()
 
     def __ne__(self, other):
-        """override !="""
+        """!="""
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """override < """
+        """<"""
         return self.area() < other.area()
 
     def __le__(self, other):
-        """override <="""
+        """<="""
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """override >"""
+        """>"""
         return (self.area() > other.area())
 
     def __ge__(self, other):
-        """override >="""
+        """>="""
         return (self.area() >= other.area())
