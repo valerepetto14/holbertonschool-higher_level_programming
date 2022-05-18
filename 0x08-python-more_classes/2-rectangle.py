@@ -5,19 +5,19 @@ create rectangle
 
 
 class Rectangle:
-    "def class rectangle"
+    """def class rectangle"""
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
 
     @property
-    """getter"""
     def width(self):
+        """getter"""
         return self.__width
 
     @width.setter
-    """setter"""
     def width(self, value):
+        """setter"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -26,13 +26,13 @@ class Rectangle:
             self.__width = value
 
     @property
-    """gettet"""
     def height(self):
+        """getter"""
         return self.__heigth
 
     @height.setter
-    """setter"""
     def height(self, value):
+        """setter"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
