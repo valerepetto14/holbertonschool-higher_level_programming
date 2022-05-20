@@ -5,18 +5,20 @@ create rectangle
 
 
 class Rectangle:
-    "def class rectangle"
+    """def class rectangle"""
     def __init__(self, width=0, height=0):
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
+        """getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        if type(value) != int:
+        """setter"""
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -25,10 +27,12 @@ class Rectangle:
 
     @property
     def height(self):
-        return self.__heigth
+        """getter"""
+        return self.__height
 
     @height.setter
     def height(self, value):
+        """setter"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -37,11 +41,11 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        "def method that calc area"
+        """def method that calc area"""
         return self.__width * self.__height
 
     def perimeter(self):
-        "def method that calc perimetro"
+        """def method that calc perimetro"""
         if self.width == 0 or self.__height == 0:
             return 0
         return self.__width * 2 + self.__height * 2

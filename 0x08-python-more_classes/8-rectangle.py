@@ -5,9 +5,10 @@ create rectangle
 
 
 class Rectangle:
+    """def class Rectangle"""
     print_symbol = '#'
     number_of_instances = 0
-    "def class rectangle"
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -15,10 +16,12 @@ class Rectangle:
 
     @property
     def width(self):
+        """getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """setter"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -28,10 +31,12 @@ class Rectangle:
 
     @property
     def height(self):
-        return self.__heigth
+        """getter"""
+        return self.__height
 
     @height.setter
     def height(self, value):
+        """setter"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -72,6 +77,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """def bigger or equal"""
         if type(rect_1) != Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) != Rectangle:
