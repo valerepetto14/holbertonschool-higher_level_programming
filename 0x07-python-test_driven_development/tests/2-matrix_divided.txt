@@ -1,0 +1,5 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> print(add_integer(2, 3))
+5
+>>> print(add_integer(None))
+tr
