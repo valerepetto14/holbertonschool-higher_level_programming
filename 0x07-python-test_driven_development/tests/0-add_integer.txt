@@ -1,3 +1,30 @@
+================================
+Tests 0-add_integer.py
+================================
+
+IMPORT FUNCTION:
 >>> add_integer = __import__('0-add_integer').add_integer
+
+
+TEST:
+=============================
 >>> print(add_integer(2, 3))
 5
+
+=============================
+>>> print(add_integer(None))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+=============================
+>>> print(add_integer(2.5,10))
+12
+
+=============================
+>>> print(add_integer(1,[""]))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+=============================

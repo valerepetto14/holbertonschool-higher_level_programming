@@ -1,5 +1,33 @@
->>> add_integer = __import__('0-add_integer').add_integer
->>> print(add_integer(2, 3))
-5
->>> print(add_integer(None))
-tr
+================================
+Tests 2-matrix_divided.py
+================================
+
+IMPORT FUNCTION:
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+TEST:
+=============================
+>>> print(matrix_divided(1,1))
+Traceback (most recent call last):
+...
+TypeError: 'int' object is not iterable
+
+=============================
+>>> print(matrix_divided(1,1))
+Traceback (most recent call last):
+...
+TypeError: 'int' object is not iterable
+
+=============================
+>>> print(matrix_divided([],None))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+==============================
+>>> print(matrix_divided(None))
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+==============================
