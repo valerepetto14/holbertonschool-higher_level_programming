@@ -22,6 +22,10 @@ TypeError: a must be an integer
 12
 
 =============================
+>>> print(add_integer(10))
+108
+
+=============================
 >>> print(add_integer(1,[""]))
 Traceback (most recent call last):
 ...
