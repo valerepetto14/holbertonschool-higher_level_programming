@@ -1,0 +1,53 @@
+ ===============================
+test 5-text_indentation
+================================
+
+IMPORT FUNCTION:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+TEST:
+================================
+>>> text_indentation("hola  . soy valentin ")
+hola  .
+<BLANKLINE>
+soy valentin
+
+================================
+>>> text_indentation("hola  . soy valentin. y: estudio en holberton ")
+hola  .
+<BLANKLINE>
+soy valentin.
+<BLANKLINE>
+y:
+<BLANKLINE>
+estudio en holberton
+
+================================
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+================================
+>>> text_indentation("hola","hola")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+================================
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+================================
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+================================
+>>> text_indentation("")
+
+================================
