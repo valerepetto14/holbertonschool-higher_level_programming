@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def nmagic_string(lista=[]):
-    lista += ["BestSchool"]
-    return ', '.join(lista)
+def magic_string(string_list=[]):
+    string_list += ["BestSchool"]
+    return ', '.join(string_list)
