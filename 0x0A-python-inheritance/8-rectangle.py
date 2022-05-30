@@ -11,9 +11,11 @@ width and height must be positive integers, validated by integer_validator
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangle (BaseGeometry):
-    """def class BaseGeometry"""
+class Rectangle(BaseGeometry):
+    '''class inheritance'''
     def __init__(self, width, height):
-        """def  init"""
-        self.__height = self.integer_validator("height", height)
-        self.__width = self.integer_validator("width", width)
+        '''initializing class'''
+        super().integer_validator("width", width)
+        self.__width = width
+        super().integer_validator("height", height)
+        self.__height = height
