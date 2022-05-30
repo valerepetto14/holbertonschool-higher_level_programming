@@ -15,7 +15,9 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """def class square"""
+    '''class inheritance from Rectangle'''
     def __init__(self, size):
-        """def init"""
+        '''initializing class'''
+        self.__size = size
+        self.integer_validator("size", size)
         super().__init__(size, size)
