@@ -16,19 +16,17 @@ print() should print, and str() should return, the following rectangle
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangle(BaseGeometry):
-    '''class inheritance'''
+class Rectangle (BaseGeometry):
+    """def class BaseGeometry"""
     def __init__(self, width, height):
-        '''initializing class'''
-        super().integer_validator("width", width)
-        self.__width = width
-        super().integer_validator("height", height)
-        self.__height = height
+        """def  init"""
+        self.__height = self.integer_validator("height", height)
+        self.__width = self.integer_validator("width", width)
 
     def area(self):
-        '''function that returns the area'''
-        return self.__height * self.__width
+        """def area"""
+        return self.__width * self.__height
 
     def __str__(self):
-        '''function that return a string'''
-        return (f"[{type(self).__name__}] {self.__width}/{self.__height}")
+        """def __str__"""
+        return f"[{type(self).__name__}] {self.__width}/{self.__height}"
