@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Write a class Student that defines a student by:
 """
@@ -21,3 +21,4 @@ class Student:
                 if atribute in self.__dict__.keys():
                     dictionary[atribute] = self.__dict__[atribute]
             return dictionary
+
