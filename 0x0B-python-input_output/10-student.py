@@ -21,4 +21,3 @@ class Student:
                 if atribute in self.__dict__.keys():
                     dictionary[atribute] = self.__dict__[atribute]
             return dictionary
-
