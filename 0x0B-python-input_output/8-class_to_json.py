@@ -7,5 +7,4 @@ integer and boolean) for JSON serialization of an object:
 
 
 def class_to_json(obj):
-    """def class_to_json"""
     return obj.__dic__
