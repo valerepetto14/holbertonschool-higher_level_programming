@@ -28,5 +28,3 @@ def pascal_triangle(n):
         j.append(1)
         triangle.append(j)
     return triangle
-
-        
