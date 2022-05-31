@@ -16,4 +16,3 @@ except FileNotFoundError:
     object = []
 
 save_to_json_file(object + argv[1:], file)
-
