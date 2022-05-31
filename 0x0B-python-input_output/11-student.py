@@ -21,7 +21,7 @@ class Student:
                 if atribute in self.__dict__.keys():
                     dictionary[atribute] = self.__dict__[atribute]
             return dictionary
-    
+
     def reload_from_json(self, json):
         """def reload from json"""
         for key, value in json.items():
