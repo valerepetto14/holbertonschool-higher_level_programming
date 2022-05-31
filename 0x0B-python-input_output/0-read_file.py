@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a function that reads a text file (UTF8) and prints it to stdout:
+Function that reads a text file (with UTF8 encoding) and prints it to stdout
 """
 
 
