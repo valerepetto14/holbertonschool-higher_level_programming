@@ -9,10 +9,10 @@ class Rectangle(Base):
     """def class Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
             super().__init__(id)
-            width = width
-            height = height
-            x = x
-            y = y
+            self.width = width
+            self.height = height
+            self.x = x
+            self.y = y
 
     @property
     def width(self):
@@ -73,8 +73,38 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
-
     
+    def area(self):
+        """def method area"""
+        return self.width * self.height
+    
+    def display(self):
+        """def method display"""
+        if self.__width == 0:
+            print('')
+        else:
+            for saltos in range(self.x):
+                print()
+            for height in range(self.__height):
+                for spaces in range(self.y):
+                    print(' ', end='')
+                for width in range(self.__width):
+                    print('#', end = '')
+                print("")
+    
+    def __str__(self):
+        """def method str"""
+        return f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    
+    def update(self, *args):
+        """def update"""
+        if len(args) is 1:
+            self.id = args[0]
+        elif:
+            self.id = args[0]
+            self.width = args[0]
+            
+
     
 
 
