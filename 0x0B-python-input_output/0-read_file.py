@@ -8,4 +8,4 @@ def read_file(filename=""):
     """def read file"""
     with open(filename, encoding="utf-8") as f:
         texto = f.read()
-        print(texto)
+        print(texto, end="")

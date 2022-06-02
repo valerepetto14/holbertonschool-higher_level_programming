@@ -14,15 +14,17 @@ You are not allowed to import any module
 
 
 def pascal_triangle(n):
-    res = []
-    """def pascal_triangle"""
-    for i in range(n):
-        niveles = []
-        if i is 0:
-            niveles.append(1)
-            res = res + niveles
-        else:
-            for a in range(i):
-                niveles
+    """function of pascal triangle"""
+    if n <= 0:
+        return []
+    if n == 1:
+        return [[1]]
 
-        
+    triangle = [[1]]
+    for i in range(n-1):
+        j = [1]
+        for k in range(i):
+            j.append(triangle[-1][k] + triangle[-1][k+1])
+        j.append(1)
+        triangle.append(j)
+    return triangle
