@@ -98,10 +98,19 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """def update"""
-        atributos = ["id", "width", "height", "x", "y"]
-        for pos, arg in enumerate(kwargs):
-            if pos < (len(atributos) - 1):
-                setattr(self, arg, kwargs[arg])
-            else:
-                break
+        atributos = ["id", "width", "height", "y", "x"]
+
+        if len(args) != 0:
+            for pos, arg in enumerate(args):
+                if pos < (len(atributos) - 1):
+                    setattr(self, atributos[pos], arg)
+                else:
+                    break
+        else:
+            for pos, arg in kwargs.items():
+                setattr(self, pos, arg)
+    
+    def to_dictionary(self):
+        """def to_dictionary"""
+        return {"x": self.x, "y": self.y , "id" : self.id , "height": self.height, "width": self.width}
             
