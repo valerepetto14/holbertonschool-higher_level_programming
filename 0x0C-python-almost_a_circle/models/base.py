@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import json
-from xxlimited import new
+from multiprocessing import dummy
 """
 base
 """
@@ -44,5 +44,24 @@ class Base:
         """def method from_json_string"""
         if json_string is None or len(json_string):
             lista = []
-        return json.loads(json_string) 
+        return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        It creates an instance of the class `cls` and sets the attributes of the instance to the values
+        in the dictionary
+        
+        :param cls: The class that is being created
+        """
+        class_name = cls.__name__
+
+        if class_name == "Square":
+            dummy = cls(1)
+
+        if class_name == "Rectangle":
+            new_class = cls(1,1)
+        
+        new_class.update(**dictionary)
+
+        return new_class
