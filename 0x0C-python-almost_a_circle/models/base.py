@@ -40,6 +40,7 @@ class Base:
         with open(name_file, "w", encoding="UTF-8") as file:
             file.write(list_to_string)
 
+    @staticmethod
     def from_json_string(json_string):
         """def method from_json_string"""
         if json_string is None or len(json_string) == 0:
