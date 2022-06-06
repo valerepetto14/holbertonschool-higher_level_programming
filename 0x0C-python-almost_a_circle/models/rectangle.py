@@ -86,7 +86,7 @@ class Rectangle(Base):
             for saltos in range(self.y):
                 print("")
             for height in range(self.__height):
-                for spaces in range(self.y):
+                for spaces in range(self.x):
                     print(' ', end='')
                 for width in range(self.__width):
                     print('#', end='')
