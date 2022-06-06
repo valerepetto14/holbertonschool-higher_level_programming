@@ -20,7 +20,7 @@ class test_Rectangle(unittest.TestCase):
         """test id"""
         Base._Base__nb_objects = 0
         test2 = Rectangle(20, 2, 3, 12, 10)
-        self.assertEqual(test2.id, 5)
+        self.assertEqual(test2.id, 10)
 
     def test_rectangle_empty(self):
         """test rectangle empty"""
@@ -51,12 +51,21 @@ class test_Rectangle(unittest.TestCase):
         self.assertEqual(Rectangle(3, 3).area(), 9)
         self.assertEqual(Rectangle(5, 5).area(), 25)
 
+    def test_print(self):
+        """
+        Test inherited method: __str__
+        """
+        r = Rectangle(2, 3, 4, 8, 2)
+        self.assertEqual(str(r), '[Rectangle] (2) 4/8 - 2/3')
+
     def test_display(self):
-        """def test display"""
-        rec = rectangle(2,1)
-        captureOutput = io.StringIO()
-        sys.stdout = captureOutput
-        rec.display()
-        self.assertEqual(captureOutput.getvalue(), ("##\n##\n##\n"))
+        """test display"""
+        display = "##\n##\n##\n"
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        r1 = Rectangle(2, 3)
+        r1.display()
+        self.assertEqual(capturedOutput.getvalue(), display)
+        sys.stdout = sys.__stdout__
         
 
