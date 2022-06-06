@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import json
-from multiprocessing import dummy
+import csv
 """
 base
 """
@@ -17,27 +17,27 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     def to_json_string(list_dictionaries):
         """def method to_json_String"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """def method save_to_file"""
-        name_file  = f"{cls.__name__}.json"
+        name_file = f"{cls.__name__}.json"
         new_list = []
 
         if list_objs is not None:
             for obj in list_objs:
                 new_list += [obj.to_dictionary()]
-        
+
         list_to_string = Base.to_json_string(new_list)
 
-        with open(name_file, "w",encoding="UTF-8") as file:
+        with open(name_file, "w", encoding="UTF-8") as file:
             file.write(list_to_string)
 
     def from_json_string(json_string):
@@ -49,9 +49,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        It creates an instance of the class `cls` and sets the attributes of the instance to the values
+        It creates an instance of the class `cls` and sets
+        the attributes of the instance to the values
         in the dictionary
-        
         :param cls: The class that is being created
         """
         class_name = cls.__name__
@@ -59,7 +59,7 @@ class Base:
         if class_name == "Square":
             new_class = cls(1)
         elif class_name == "Rectangle":
-            new_class = cls(1,1)
+            new_class = cls(1, 1)
 
         new_class.update(**dictionary)
 
@@ -71,59 +71,62 @@ class Base:
         name_file = f"{cls.__name__}.json"
         new_list = []
         try:
-            with open(name_file,'r') as file:
+            with open(name_file, 'r') as file:
                 r = file.read()
             lista_obj = cls.from_json_string(r)
             for obj in lista_obj:
                 new_list.append(cls.create(**obj))
-        except:
+        except Exception:
             pass
-
         return new_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
         This function saves a list of objects to a csv file.
-        
         :param cls: The class of the object that we're saving
         :param list_objs: a list of objects
         """
         name_file = f"{cls.__name__}.csv"
-        new_list = []
-        aux = ""
 
         if cls.__name__ == "Square":
             if list_objs is not None:
-                for obj in list_objs:
-                    new_list += [{'id': obj.id, 'size': obj.size, 'x': obj.x, 'y': obj.y}]
+                with open(name_file, 'w', newline='') as student_file:
+                    writer = csv.writer(student_file)
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
         if cls.__name__ == "Rectangle":
             if list_objs is not None:
-                for obj in list_objs:
-                    new_list += [{'id': obj.id, 'width': obj.width, 'height': obj.height, 'x': obj.x, 'y': obj.y}]
-
-        list_to_string = Base.to_json_string(new_list)
-
-        with open(name_file, "w",encoding="UTF-8") as file:
-            file.write(list_to_string)
+                with open(name_file, 'w', newline='') as student_file:
+                    writer = csv.writer(student_file)
+                    for obj in list_objs:
+                        lista = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                        writer.writerow(lista)
 
     @classmethod
     def load_from_file_csv(cls):
         """
-        It takes a class as an argument and returns a list of instances of that class
-        
+        It takes a class as an argument and returns a list of
+        instances of that class
         :param cls: the class that we're loading from
         """
+        name_class = cls.__name__
         name_file = f"{cls.__name__}.csv"
         new_list = []
-        try:
-            with open(name_file,'r') as file:
-                r = file.read()
-            lista_obj = cls.from_json_string(r)
-            for obj in lista_obj:
-                new_list.append(cls.create(**obj))
-        except:
-            pass
+
+        with open(name_file, 'r') as file:
+            fileread = csv.reader(file)
+            for obj in fileread:
+                if name_class == 'Square':
+                    dic_obj = {"id": int(obj[0]), "size": int(obj[1]),
+                               "x": int(obj[2]), "y": int(obj[3])}
+
+                if name_class == 'Rectangle':
+                    dic_obj = {"id": int(obj[0]), "width": int(obj[1]),
+                               "height": int(obj[2]), "x": int(obj[3]),
+                               "y": int(obj[4])}
+
+                new_list.append(cls.create(**dic_obj))
 
         return new_list

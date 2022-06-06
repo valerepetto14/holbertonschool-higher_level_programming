@@ -94,7 +94,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """def method str"""
-        return f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return ("[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__, self.id, self.x, self.y, self.width,
+            self.height
+        ))
 
     def update(self, *args, **kwargs):
         """def update"""
@@ -109,8 +112,12 @@ class Rectangle(Base):
         else:
             for pos, arg in kwargs.items():
                 setattr(self, pos, arg)
-    
+
     def to_dictionary(self):
         """def to_dictionary"""
-        return {"x": self.x, "y": self.y , "id" : self.id , "height": self.height, "width": self.width}
+        dic = {}
+        atributos = []
+        for atributo in atributos:
+            dic[atributo] = getattr(self, atributo)
+        return dic
             
