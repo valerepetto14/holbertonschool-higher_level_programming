@@ -8,13 +8,13 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """def class Square that inherit of Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size ,size, x, y, id)
-        
+        super().__init__(size, size, x, y, id)
+
     @property
     def size(self):
         """def getter size"""
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """def setter size"""
@@ -38,7 +38,7 @@ class Square(Rectangle):
                 if position <= (len(attrs) - 1):
                     setattr(self, attrs[position], arg)
                 else:
-                    break 
+                    break
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
@@ -48,4 +48,4 @@ class Square(Rectangle):
         It returns a dictionary representation of a Square
         :return: A dictionary with the id, x, size, and y of the square
         """
-        return {"id": self.id, "x": self.x , "size" : self.size , "y": self.y}
+        return {"id": self.id, "x": self.x, "size": self.size, "y": self.y}
