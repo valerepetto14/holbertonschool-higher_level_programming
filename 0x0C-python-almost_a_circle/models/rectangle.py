@@ -83,8 +83,8 @@ class Rectangle(Base):
         if self.__width == 0:
             print('')
         else:
-            for saltos in range(self.x):
-                print()
+            for saltos in range(self.y):
+                print("")
             for height in range(self.__height):
                 for spaces in range(self.y):
                     print(' ', end='')
