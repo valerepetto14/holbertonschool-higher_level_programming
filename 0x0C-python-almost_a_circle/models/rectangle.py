@@ -4,6 +4,7 @@ Write the class Rectangle that inherits from Base:
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """def class Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -119,4 +120,3 @@ class Rectangle(Base):
         for atributo in atributos:
             dic[atributo] = getattr(self, atributo)
         return dic
-            
