@@ -42,15 +42,9 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        Create a static method that returns the list of the JSON string
-        representation "json_string".
-        Aca se pasa de un json_string a una lista de python.
-        """
-        import json
-
+        """def method from_json_string"""
         if json_string is None or len(json_string) == 0:
-            json_string = "[]"
+            return "[]"
         return json.loads(json_string)
 
     @classmethod
