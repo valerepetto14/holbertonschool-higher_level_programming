@@ -11,22 +11,22 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class test_Base(unittest.TestCase):
     """def class TestBase"""
-    def Test_id(self):
+    def test_id(self):
         """test id"""
         def test_print(self):
             self.assertEqual(Base(1), self.id == 1)
             self.assertEqual(Base(1000), self.id == 1000)
             self.assertEqual(Base(3), self.id == 3)
 
-    def Test_type(self):
+    def test_type(self):
         """def method test_type"""
         self.assertEqual(str(type(Base)), "<class 'type'>")
         self.assertEqual(str(type(Rectangle)), "<class 'type'>")
         self.assertEqual(str(type(Square)), "<class 'type'>")
     
-    def Test_to_json_string(self):
+    def test_to_json_string(self):
         """test method to json string"""
         new_dictionary =  {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
         new_json_string = Base.to_json_string([new_dictionary])
