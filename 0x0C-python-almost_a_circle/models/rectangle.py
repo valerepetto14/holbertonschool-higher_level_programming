@@ -117,7 +117,7 @@ class Rectangle(Base):
     def to_dictionary(self):
         """def to_dictionary"""
         dic = {}
-        atributos = []
+        atributos = ['x', 'y', 'id', 'height', 'width']
         for atributo in atributos:
             dic[atributo] = getattr(self, atributo)
         return dic
