@@ -57,11 +57,73 @@ class Base:
         class_name = cls.__name__
 
         if class_name == "Square":
-            dummy = cls(1)
-
-        if class_name == "Rectangle":
+            new_class = cls(1)
+        elif class_name == "Rectangle":
             new_class = cls(1,1)
-        
+
         new_class.update(**dictionary)
 
         return new_class
+
+    @classmethod
+    def load_from_file(cls):
+        """def method lead_from_file"""
+        name_file = f"{cls.__name__}.json"
+        new_list = []
+        try:
+            with open(name_file,'r') as file:
+                r = file.read()
+            lista_obj = cls.from_json_string(r)
+            for obj in lista_obj:
+                new_list.append(cls.create(**obj))
+        except:
+            pass
+
+        return new_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        This function saves a list of objects to a csv file.
+        
+        :param cls: The class of the object that we're saving
+        :param list_objs: a list of objects
+        """
+        name_file = f"{cls.__name__}.csv"
+        new_list = []
+        aux = ""
+
+        if cls.__name__ == "Square":
+            if list_objs is not None:
+                for obj in list_objs:
+                    new_list += [{'id': obj.id, 'size': obj.size, 'x': obj.x, 'y': obj.y}]
+
+        if cls.__name__ == "Rectangle":
+            if list_objs is not None:
+                for obj in list_objs:
+                    new_list += [{'id': obj.id, 'width': obj.width, 'height': obj.height, 'x': obj.x, 'y': obj.y}]
+
+        list_to_string = Base.to_json_string(new_list)
+
+        with open(name_file, "w",encoding="UTF-8") as file:
+            file.write(list_to_string)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        It takes a class as an argument and returns a list of instances of that class
+        
+        :param cls: the class that we're loading from
+        """
+        name_file = f"{cls.__name__}.csv"
+        new_list = []
+        try:
+            with open(name_file,'r') as file:
+                r = file.read()
+            lista_obj = cls.from_json_string(r)
+            for obj in lista_obj:
+                new_list.append(cls.create(**obj))
+        except:
+            pass
+
+        return new_list
