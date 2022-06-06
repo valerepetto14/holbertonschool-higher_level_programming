@@ -48,12 +48,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        It creates an instance of the class `cls` and sets
-        the attributes of the instance to the values
-        in the dictionary
-        :param cls: The class that is being created
-        """
+        """def method create"""
         class_name = cls.__name__
 
         if class_name == "Square":
@@ -82,11 +77,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """
-        This function saves a list of objects to a csv file.
-        :param cls: The class of the object that we're saving
-        :param list_objs: a list of objects
-        """
+        """def method save_to file csv"""
         name_file = f"{cls.__name__}.csv"
 
         if cls.__name__ == "Square":
@@ -106,11 +97,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """
-        It takes a class as an argument and returns a list of
-        instances of that class
-        :param cls: the class that we're loading from
-        """
+        """def method load_from_file_csv"""
         name_class = cls.__name__
         name_file = f"{cls.__name__}.csv"
         new_list = []
