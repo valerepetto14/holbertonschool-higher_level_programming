@@ -2,6 +2,8 @@
 """
 TEST OF CLASS BASE
 """
+
+
 import unittest
 import json
 from models.base import Base
@@ -11,7 +13,6 @@ from models.square import Square
 
 class TestBase(unittest.TestCase):
     """def class TestBase"""
-
     def Test_id(self):
         """test id"""
         def test_print(self):
@@ -20,6 +21,7 @@ class TestBase(unittest.TestCase):
             self.assertEqual(Base(3), self.id == 3)
 
     def Test_type(self):
+        """def method test_type"""
         self.assertEqual(str(type(Base)), "<class 'type'>")
         self.assertEqual(str(type(Rectangle)), "<class 'type'>")
         self.assertEqual(str(type(Square)), "<class 'type'>")
