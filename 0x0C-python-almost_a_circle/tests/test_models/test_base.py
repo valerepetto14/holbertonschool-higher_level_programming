@@ -45,7 +45,6 @@ class test_Base(unittest.TestCase):
         """def test save to file"""
         with self.assertRaises(AttributeError):
             Base.save_to_string()
-    
-    
+
 
     
