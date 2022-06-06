@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
-Unittest for rectangle class
-'''
+"""
+test class rectangle
+"""
 
 
 from curses.textpad import rectangle
@@ -14,25 +14,21 @@ from models.square import Square
 
 
 class test_Rectangle(unittest.TestCase):
-    '''class'''
+    """class rectangle test"""
 
     def test_id(self):
-        '''testeamos id'''
+        """test id"""
         Base._Base__nb_objects = 0
         test2 = Rectangle(20, 2, 3, 12, 10)
         self.assertEqual(test2.id, 5)
 
     def test_rectangle_empty(self):
-        """
-        Test if too little args given throws an error
-        """
+        """test rectangle empty"""
         with self.assertRaises(TypeError):
             Rectangle()
 
     def test_rec_none(self):
-        """
-        Test if None args is given throws an error
-        """
+        """Test if None args is given throws an error"""
         with self.assertRaises(TypeError):
             Rectangle(None)
 
@@ -49,7 +45,12 @@ class test_Rectangle(unittest.TestCase):
         
         with self.assertRaises(TypeError):
             test1 = Rectangle("School", "Holberton", 2)
-        
+
+    def test_area(self):
+        """def test method area"""
+        self.assertEqual(Rectangle(3, 3).area(), 9)
+        self.assertEqual(Rectangle(5, 5).area(), 25)
+
     def test_display(self):
         """def test display"""
         rec = rectangle(2,1)
