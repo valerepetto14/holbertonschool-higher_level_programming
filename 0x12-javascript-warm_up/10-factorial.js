@@ -6,7 +6,7 @@ if (args.length === 2) {
   console.log(1);
 } else {
   const num = parseInt(args[2]);
-  console.log(factorial(num);)
+  console.log(factorial(num))
 }
 
 function factorial(x) {
