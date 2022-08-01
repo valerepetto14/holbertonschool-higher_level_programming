@@ -1,4 +1,4 @@
 #!/usr/bin/node
-//hola
+// Script for printing a message
 const myVar = 'JavaScript is amazing';
 console.log(myVar);
