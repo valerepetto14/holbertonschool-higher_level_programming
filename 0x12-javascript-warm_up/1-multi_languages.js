@@ -1,4 +1,4 @@
-let text = ["C is fun","Python is cool","JavaScript is amazing"];
-text.forEach(element => {
-    console.log(element)
-});
+#!/usr/bin/node
+console.log('C is fun');
+console.log('Python is cool');
+console.log('JavaScript is amazing');
