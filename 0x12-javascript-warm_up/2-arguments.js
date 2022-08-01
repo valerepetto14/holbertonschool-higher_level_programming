@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// print 
+// print
 const process = require('process');
 const args = process.argv;
 
