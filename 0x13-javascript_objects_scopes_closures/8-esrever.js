@@ -1,3 +1,3 @@
 exports.esrever = function (list) {
-  return list.reverse();
+  return list.reduce((acc, val) =>  [val, ...acc], [])
 };
