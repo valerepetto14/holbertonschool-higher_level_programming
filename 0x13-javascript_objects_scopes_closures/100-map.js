@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const array = require('./100-data').list;
+const { list } = require('./100-data')
 
-const newarray = array.map(function (dato, indice) {
-  return dato * indice;
-});
-console.log(array);
-console.log(newarray);
+newlist = list.map(function (dato, indice) {
+    return dato * indice;
+})
+console.log(list)
+console.log(newlist)
