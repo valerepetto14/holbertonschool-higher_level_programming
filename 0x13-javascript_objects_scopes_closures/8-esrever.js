@@ -1,3 +1,7 @@
 exports.esrever = function (list) {
-  return list.reduce((acc, val) =>  [val, ...acc], [])
+  let newlist = []
+  for (let index = list.length - 1; index >= 0; index--) {
+    newlist.push(list[index])
+  }
+	return newlist
 };
