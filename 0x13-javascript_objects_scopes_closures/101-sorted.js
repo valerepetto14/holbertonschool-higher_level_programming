@@ -11,9 +11,11 @@ const dicUnique = new Set(newdic);
 for (const i of dicUnique) {
   dicreturn[i] = [];
 }
+
 for (const i in dict) {
   const valor = dict[i];
   dicreturn[valor].push(i);
 }
 
 console.log(dicreturn);
+
