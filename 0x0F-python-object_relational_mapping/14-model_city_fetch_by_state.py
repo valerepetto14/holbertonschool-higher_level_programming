@@ -17,6 +17,6 @@ if __name__ == "__main__":
     session = Session()
     data = session.query(State.name, City.id, City.name).join(City).all()
     for i in data:
-        print(f"{i[0].name}: ({i[1].id}) {i[1].name}")
+        print(f"{state_city[0]}: ({state_city[1]}) {state_city[2]}")
     session.commit()
     session.close()
