@@ -14,7 +14,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", username, password, name)
     cursor = db.cursor()
     cursor.execute(f"SELECT * FROM states \
-                    WHERE states.name ='{argument_search}'\
+                    WHERE states.name LIKE BINARY '{argument_search}'\
                                         ORDER BY states.id ASC")
     data = cursor.fetchall()
     for row in data:
