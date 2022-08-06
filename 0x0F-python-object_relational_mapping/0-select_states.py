@@ -22,4 +22,4 @@ if __name__ == "__main__":
         cursor.close()
         db.close()
     except(Exception) as error:
-        print(error)
+        return
