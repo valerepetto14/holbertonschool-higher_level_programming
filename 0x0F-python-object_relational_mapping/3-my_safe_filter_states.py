@@ -10,12 +10,14 @@ import MySQLdb
 username = argv[1]
 password = argv[2]
 name = argv[3]
+argument_search = argv[4]
 
 if __name__ == "__main__":
     try:
         db = MySQLdb.connect("localhost", username, password, name)
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM states")
+        cursor.execute("SELECT * FROM states WHERE states.name  = %(argument)s\
+                    ORDER BY states.id ASC""", {'argument': argument_search})
         data = cursor.fetchall()
         for row in data:
             print(row)

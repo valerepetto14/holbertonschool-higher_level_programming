@@ -15,7 +15,9 @@ if __name__ == "__main__":
     try:
         db = MySQLdb.connect("localhost", username, password, name)
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM states")
+        cursor.execute("SELECT cities.id ,cities.name, states.name\
+                        FROM cities\
+                        JOIN states on states.id = cities.state_id")
         data = cursor.fetchall()
         for row in data:
             print(row)

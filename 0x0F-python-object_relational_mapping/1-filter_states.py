@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+sql alchemy
+"""
+
+
 from sys import argv
 import MySQLdb
 
@@ -18,4 +23,3 @@ if __name__ == "__main__":
         db.close()
     except(Exception) as error:
         print(error)
-
