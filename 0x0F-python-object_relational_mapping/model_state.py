@@ -15,7 +15,6 @@ class State(Base):
     id = Column('id', Integer, primary_key=True, nullable=False, unique=True)
     name = Column('name', String(128), nullable=False)
     citis = relationship('City', backref='father')
-
     """def init"""
     def __init__(self, name):
         self.name = name
