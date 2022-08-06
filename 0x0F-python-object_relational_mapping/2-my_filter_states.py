@@ -23,4 +23,4 @@ if __name__ == "__main__":
         cursor.close()
         db.close()
     except (Exception) as errors:
-        print()
+        print(errors)
