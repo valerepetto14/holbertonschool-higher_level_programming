@@ -16,9 +16,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     stados = session.query(State).all()
-    print(stados[0].cities)
-    # for i in stados:
-    #     print(f"{i.id}: {i.name}")
-    #     for a in i.cities:
-    #         print(f"    {a}")
+    for i in stados:
+        print(f"{i.id}: {i.name}")
+        for a in i.cities:
+            print(f"    {a}")
     session.close()
