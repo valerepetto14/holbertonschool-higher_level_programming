@@ -13,8 +13,8 @@ if __name__ == "__main__":
     argument_search = argv[4]
     db = MySQLdb.connect("localhost", username, password, name)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'\
-          ORDER BY id ASC".format(argument_search))
+    cursor.execute(f"SELECT * FROM states WHERE name LIKE BINARY '{argument_search}'\
+          ORDER BY id ASC")
     data = cursor.fetchall()
     for row in data:
         print(row)
