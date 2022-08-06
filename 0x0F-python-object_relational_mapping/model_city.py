@@ -2,8 +2,6 @@
 """
 Start link class to table in database
 """
-
-
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 from sqlalchemy.orm import relationship
