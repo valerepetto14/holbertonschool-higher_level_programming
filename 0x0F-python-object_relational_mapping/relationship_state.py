@@ -1,4 +1,9 @@
-from sqlalchemy import Column, Integer, String
+#!/usr/bin/python3
+"""
+Start link class to table in database
+"""
+
+
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 Base = declarative_base()
