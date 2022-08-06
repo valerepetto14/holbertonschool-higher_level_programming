@@ -4,13 +4,12 @@ sql alchemy
 """
 
 
-from sys import argv
-import MySQLdb
-
-username = argv[1]
-password = argv[2]
-name = argv[3]
 if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+    username = argv[1]
+    password = argv[2]
+    name = argv[3]
     try:
         db = MySQLdb.connect("localhost", username, password, name)
         cursor = db.cursor()
