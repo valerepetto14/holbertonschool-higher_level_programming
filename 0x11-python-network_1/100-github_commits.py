@@ -20,4 +20,4 @@ if __name__ == "__main__":
                 print("{}: {}".format(commit.get('sha'), commit.get('commit')
                                       .get('author').get('name')))
     except Exception:
-        return
+        exit
