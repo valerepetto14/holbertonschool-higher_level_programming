@@ -4,7 +4,8 @@
 
 if __name__ == "__main__":
     import urllib.request
+    import sys
 
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+    with urllib.request.urlopen(sys.argv[1]) as response:
         content = response.headers.get('X-Request-Id')
         print(content)
