@@ -13,9 +13,6 @@ if __name__ == "__main__":
               }
     res = requests.get("https://api.github.com/user", auth=(user, token))
     try:
-        if len(res.json()['id']) != 0:
-            print(res.json()['id'])
-        else:
-            print('None')
+        print(res.json()['id'])
     except Exception:
         print(None)
