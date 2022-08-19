@@ -10,4 +10,4 @@ if __name__ == "__main__":
     data = parse.urlencode({"email": sys.argv[2]})
     data = data.encode()
     with request.urlopen(url, data) as response:
-         print(response.read().decode('utf-8'))
+        print(response.read().decode('utf-8'))
