@@ -12,12 +12,12 @@ if __name__ == "__main__":
     user = argv[2]
 
     url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, user)
-
-    res = requests.get(url)
-    json = res.json()
-
-    for idx, commit in enumerate(json):
-        if idx < 10:
-            print("{}: {}".format(commit.get('sha'), commit.get('commit')
-                                  .get('author').get('name')))
-        else:
+    try:
+        res = requests.get(url)
+        json = res.json()
+        for idx, commit in enumerate(json):
+            if idx < 10:
+                print("{}: {}".format(commit.get('sha'), commit.get('commit')
+                                      .get('author').get('name')))
+    except Exception:
+        return
