@@ -17,6 +17,6 @@ if __name__ == "__main__":
     cont = 0
     for i in data:
         if cont < 10:
-            print("{}: {}".format(i.get('sha'), i.get('commit')
-                                  .get('author').get('name')))
-        cont = cont + 1
+            print(i.get('sha'), end=': ')
+            print(i.get('commit').get('author').get('name'))
+            cont = cont + 1
