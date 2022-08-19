@@ -12,7 +12,10 @@ if __name__ == "__main__":
               'X-Github-API-Token': token
               }
     res = requests.get("https://api.github.com/user", auth=(user, token))
-    if len(res.json()['id']) != 0:
-        print(res.json()['id'])
-    else:
-        print('None')
+    try:
+        if len(res.json()['id']) != 0:
+            print(res.json()['id'])
+        else:
+            print('None')
+    except Exception:
+        print(None)
