@@ -10,7 +10,7 @@ if __name__ == "__main__":
         datos = sys.argv[1]
     else:
         datos = ""
-    res = requests.post("http://0.0.0.0:5000/search_user", {q: datos})
+    res = requests.post("http://0.0.0.0:5000/search_user", {"q": datos})
     try:
         data = res.json()
         if len(data) == 0:
