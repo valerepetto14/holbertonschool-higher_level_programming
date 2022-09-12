@@ -6,9 +6,9 @@ const url = process.argv[2];
 axios.get(url)
   .then(response => {
     let cont = 0;
-    result = response.data.results;
+    const result = response.data.results;
     for (const i in result) {
-      actores = result[i].characters;
+      const actores = result[i].characters;
       for (const a in actores) {
         if (actores[a].includes('18')) {
           cont = cont + 1;
