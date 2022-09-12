@@ -8,5 +8,5 @@ axios.get(url)
     console.log(response.status);
   })
   .catch(error => {
-    console.log(error.response.status);
+    console.log(`error: ${error.response.status}`);
   });
