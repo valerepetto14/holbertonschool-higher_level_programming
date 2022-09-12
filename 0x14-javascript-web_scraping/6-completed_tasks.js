@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Write a script that gets the contents of a webpage and stores it in a file.
+// Write a script that computes the number of tasks completed by user id.
 const axios = require('axios');
 const url = process.argv[2];
 
